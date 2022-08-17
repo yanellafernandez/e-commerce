@@ -12,7 +12,9 @@ function login (){
 }
 
 document.addEventListener('DOMContentLoaded', ()=>{
-    document.getElementById('button').addEventListener('click', ()=>{
+    document.getElementById('formulario').addEventListener('submit', (event)=>{
+     // event es un parametro que recibe submit, que tiene todos los eventos de ese submit, luego usamos el preventDefault que evita la propagacion del submit(es decir enviar el formulario por naturaleza de html)
+     event.preventDefault()
         login();
     })
 })
