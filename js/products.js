@@ -2,8 +2,10 @@ const listado = "https://japceibal.github.io/emercado-api/cats_products/101.json
 let lista = [];
 
 function show_listAutos(autos){
-    let listaAutos = "";
+    let listaAutos = "";//genera un string vacio para despues concatenar el resto de los productos :D
+    //recorre los productos del jeison
     for (let auto of autos.products){
+        //imprimo las variables del jeison en un html
         listaAutos += 
         ` <div class="list-group-item list-group-item-action">
         <div class="row">
@@ -29,10 +31,13 @@ function show_listAutos(autos){
 }
 
 document.addEventListener("DOMContentLoaded", ()=>{
+    //pide una url y devuelve un jeison, .then es una funcion del fetch que se ejecuta despues de realizar una promise
     getJSONData(listado).then(function(resultObj){
         if (resultObj.status === "ok")
+        // se guarda en la variable lista la data del jeison
         {
             lista = resultObj.data;
+            // ejecuta la funcion con esa data del json
             show_listAutos(lista);
         }
     });

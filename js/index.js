@@ -13,7 +13,10 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 });
 
+//si no existe el usuario te redirecciona al login
 document.addEventListener("DOMContentLoaded",()=>{
+    //getitem obtiene el valor del item
+    //json.parse convierte strings a un jeison
     let usuario =JSON.parse(localStorage.getItem('item'));
     if (usuario==null){
         location.href="login.html";

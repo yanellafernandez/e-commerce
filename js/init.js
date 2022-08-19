@@ -14,7 +14,7 @@ let showSpinner = function(){
 let hideSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "none";
 }
-
+//hace una peticion a una url y obtiene un jeison
 let getJSONData = function(url){
     let result = {};
     showSpinner();
