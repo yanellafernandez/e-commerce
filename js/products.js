@@ -1,4 +1,6 @@
+//constante con la url del json
 const listado = "https://japceibal.github.io/emercado-api/cats_products/101.json"
+
 let lista = [];
 
 function show_listAutos(autos){
@@ -26,6 +28,7 @@ function show_listAutos(autos){
     </div>
     `
     }
+    //el div que tiene el id listadeautos 
     document.getElementById('listaDeAutos').innerHTML = listaAutos;
     
 }
