@@ -1,5 +1,11 @@
+//creamos objeto que sirve para que cierta palabra corresponda a cierto numero
+const cast = {"Autos":101, "Juguetes":102, "Muebles":103, "Herramientas":104, "Computadoras":105, "Vestimenta":106, "Electrodomésticos":107,"Deporte":108,"Celulares":107};
+//Recibimos del localstorage el catID para que json interpretar en el URL
+let catID = localStorage.getItem("catID");
 //constante con la url del json
-const listado = "https://japceibal.github.io/emercado-api/cats_products/101.json"
+//para que busque el id
+//En la parte del url que identifica el catID de los json ponemos el objeto cast con su respectivo catID para generalizarlo dependiendo de que localstorage se abrira
+const listado = `https://japceibal.github.io/emercado-api/cats_products/${cast[catID]}.json`
 
 let lista = [];
 

@@ -188,3 +188,9 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+/* cambio al identificador */
+#identificador{
+  padding: 10px 20px;  
+  color: pink;
+
+}

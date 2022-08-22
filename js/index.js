@@ -20,5 +20,9 @@ document.addEventListener("DOMContentLoaded",()=>{
     let usuario =JSON.parse(localStorage.getItem('item'));
     if (usuario==null){
         location.href="login.html";
+    //si existe un usuario, se tomara el elemnto con el id *** y se reemplazara su texto por el mail del usuario
+    }else{
+        document.getElementById('identificador').innerHTML=usuario.mail
     }
     });
+
