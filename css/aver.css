@@ -1,0 +1,47 @@
+
+#buscar{
+    margin-left: 11px ;
+  }
+  #buscar:hover{
+    box-shadow: 5px 5px 10px #fa34df, -5px -5px 10px #f47edd;
+  }
+  #maximo:hover{
+    box-shadow: 5px 5px 10px #fa34df, -5px -5px 10px #f47edd;
+  }
+  #minimo:hover{
+    box-shadow: 5px 5px 10px #fa34df, -5px -5px 10px #f47edd;
+  }
+  #arriba:hover{
+    background-color: #f79ae5;
+    color: black;
+    border:1px solid black;
+  }
+  #abajo:hover{
+    background-color: #f79ae5;
+    color: black;
+    border:1px solid black;
+  }
+  #rel:hover{
+    background-color: #f79ae5;
+    color: black;
+    border:1px solid black;
+  }
+  #filtro:hover{
+    background-color: #f79ae5;
+    color: black;
+    border:1px solid black;
+  }
+  #clearRangeFilter:hover{
+    background-color: #f79ae5;
+    color: black;
+    border:1px solid black;
+  }
+  #vender:hover{
+    background-color: pink;
+  }
+  #categorias:hover{
+    background-color: pink;
+  }
+  #hola{
+    font-weight: 700;
+  }
