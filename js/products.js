@@ -45,7 +45,8 @@ function ascendente() {
 
 //desafiate 
 const filtrarBarra = ()=>{
-    productos.innerHTML = "";//
+    productos.innerHTML = "";//comenzará con un string vacio porque sino vamos a estar concatenando todos nuestros
+                            //productos y sera una lista infinita
     let buscar = document.getElementById('buscar') // creamos la variable y tomamos el elemento con el id buscar ( el input)
     const texto = buscar.value.toLowerCase();// accedemos a la variable anterior y lo pasamos miniculas con toLowerCase
     for(let auto of lista){ 
