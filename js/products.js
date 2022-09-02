@@ -1,4 +1,5 @@
-//creamos objeto que sirve para que cierta palabra corresponda a cierto numero
+//creamos objeto que sirve para que cierta palabra corresponda a cierto numero,diccionario clave(palabra) - valor(numeros)
+//luego se muestra el correspondiente pq usa un id
 const cast = {"Autos":101, "Juguetes":102, "Muebles":103, "Herramientas":104, "Computadoras":105, "Vestimenta":106, "Electrodomésticos":107,"Deporte":108,"Celulares":107};
 //Recibimos del localstorage el catID para que json interpretar en el URL
 let catID = localStorage.getItem("catID");
