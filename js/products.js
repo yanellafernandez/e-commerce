@@ -1,4 +1,4 @@
-//creamos objeto que sirve para que cierta palabra corresponda a cierto numero,diccionario clave(palabra) - valor(numeros)
+//creamos objeto que sirve para que cierta palabra corresponda a cierto numero, diccionario clave(palabra) - valor(numeros)
 //luego se muestra el correspondiente pq usa un id
 const cast = {"Autos":101, "Juguetes":102, "Muebles":103, "Herramientas":104, "Computadoras":105, "Vestimenta":106, "Electrodomésticos":107,"Deporte":108,"Celulares":107};
 //Recibimos del localstorage el catID para que json interpretar en el URL
@@ -19,27 +19,24 @@ function filtrar() {
     articulosF.sort((ant,sig)=>ant.cost-sig.cost);// aca los ordena 
     show_listAutos(articulosF);
 }
-// toma dos valores y los ordena de mayor a menor
+// toma dos valores y los ordena de mayor a menor(descendente)
 function descendente() {
     let list = lista
     list.sort((a, b)=>b.cost-a.cost);
-    console.log(list);
     show_listAutos(list);
 
 }
-// toma dos valores y los ordena por relevancia 
+// toma dos valores y los ordena por relevancia (ascendente)
 function descendenteRel() {
     let list = lista
     list.sort((a, b)=>b.soldCount-a.soldCount);
-    console.log(list);
     show_listAutos(list);
 
 }
-// toma dos valores y los ordena de menor a mayor
+// toma dos valores y los ordena de menor a mayor(ascendente)
 function ascendente() {
     let list = lista
     list.sort((a, b)=>a.cost-b.cost);
-    console.log(list);
     show_listAutos(list);
 
 }
