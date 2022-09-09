@@ -93,6 +93,6 @@ function corazon(score){
     }
     return heart;
 }
-// Agregar estrellas a la calificación en el formulario.
+
 
 
