@@ -5,11 +5,14 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>eMercado - Todo lo que busques está aquí</title>
-
+  <!--estrellitas-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!--estrellitas-->
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
+  <link href="./css/styles.css" rel="stylesheet">
 </head>
 
 <body>
@@ -38,10 +41,46 @@
   </nav>
   <main>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      <div class="text-center">
+        <br>
+        <h3>Info productos</h3>
+        <p class="text-center">Aquí veras toda la información del producto seleccionado.</p>
       </div>
     </div>
+    <!--div para desplegar la info-->
+    <div class="infos">
+        <div id="info" > 
+        </div>
+      </div>
+      <!--div para desplegar la info-->
+      <hr class="acheerr">
+      <!--Comentarios-->
+      <div class="contenedor-comentario">
+        <div id="comentario" > 
+        </div>
+      </div>
+      <!--Comentarios-->
+      <br>
+      <!--dejar comentario-->
+      <div class="contieneTodosComentarios">
+      <h3 class="titulo-opinion">Comentar</h3>
+      <form class="formulario-opinion"> 
+      <div >
+      <textarea id="caja-comments" cols="30" rows="10" placeholder="Tu comentario..." class="input-full contedor-opinion" ></textarea>
+      </div>
+      <h3 class="puntaje">Puntuar</h3>
+      <div id="heart-score">
+      <span class="fa-sharp fa-solid fa-heart" id="star1"></span>
+      <span class="fa-sharp fa-solid fa-heart" id="star2"></span>
+      <span class="fa-sharp fa-solid fa-heart" id="star3"></span>
+      <span class="fa-sharp fa-solid fa-heart" id="star4"></span>
+      <span class="fa-sharp fa-solid fa-heart" id="star5"></span>
+      </div>
+      <br>
+      <button class="w-20 btn btn-lg btn-primary" id="botonsito" type="submit">Enviar</button>
+    </form>
+  </div>
+      <!--dejar comentario-->
   </main>
   <footer class="text-muted">
     <div class="container">

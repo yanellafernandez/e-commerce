@@ -80,13 +80,21 @@ const filtrarBarra = ()=>{
     }
 }
 
+//(funcion tomada de categories.js) pa que guarde el producto en el local storage
+function setproduct(id) {
+    localStorage.setItem("productID", id);
+    //te redirecciona a products info
+    window.location = "product-info.html"
+}
+
 function show_listAutos(autos){
     let listaAutos = "";//genera un string vacio para despues concatenar el resto de los productos :D
     //recorre los productos del jeison
     for (let auto of autos){
         //imprimo las variables del jeison en un html
-        listaAutos += 
-        ` <div class="list-group-item list-group-item-action">
+        listaAutos +=                                
+        //agregamos "onclick" para que tome el producto cuando clickeas en el
+        ` <div onclick="setproduct('${auto.id}')"  class="list-group-item list-group-item-action">
         <div class="row">
             <div class="col-3">
                 <img src=" ${auto.image} " alt="product image" class="img-thumbnail">
