@@ -127,6 +127,9 @@ function enviarform(){
 let textarea = document.getElementById('caja-comments')
 let usuario = JSON.parse(localStorage.getItem('item'))
 let fecha = formatodate()
+//condicion de que el textarea no puede estar vacio
+if(textarea.value !== "" ){
+textarea.classList.remove('error')
 //imprimimos lo que deseamos imprimir 
 const impresion =  ` <div class="row">
 <div class="col">
@@ -142,6 +145,9 @@ const impresion =  ` <div class="row">
 `
 //formato de impresion para que lo impreso quede arriba.
 document.getElementById('comentario').innerHTML = impresion + document.getElementById('comentario').innerHTML;
+}else{
+textarea.classList.add('error')
+}
 }
 
  //un evento que se ejecuta cuando la pagina termina de cargar
