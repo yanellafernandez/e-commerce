@@ -56,6 +56,7 @@
       <hr class="acheerr">
       <!--Comentarios-->
       <div class="contenedor-comentario">
+        <h3 class='titulo-comentario'>Comentarios</h3>
         <div id="comentario" > 
         </div>
       </div>
@@ -64,17 +65,17 @@
       <!--dejar comentario-->
       <div class="contieneTodosComentarios">
       <h3 class="titulo-opinion">Comentar</h3>
-      <form class="formulario-opinion"> 
+      <form id="formulario-opinion"> 
       <div >
       <textarea id="caja-comments" cols="30" rows="10" placeholder="Tu comentario..." class="input-full contedor-opinion" ></textarea>
       </div>
       <h3 class="puntaje">Puntuar</h3>
       <div id="heart-score">
-      <span class="fa-sharp fa-solid fa-heart" id="heart1"></span>
-      <span class="fa-sharp fa-solid fa-heart" id="heart2"></span>
-      <span class="fa-sharp fa-solid fa-heart" id="heart3"></span>
-      <span class="fa-sharp fa-solid fa-heart" id="heart4"></span>
-      <span class="fa-sharp fa-solid fa-heart" id="heart5"></span>
+      <span class="fa-sharp fa-solid fa-heart" onclick="cora(1)" id="heart1"></span>
+      <span class="fa-sharp fa-solid fa-heart" onclick="cora(2)" id="heart2"></span>
+      <span class="fa-sharp fa-solid fa-heart" onclick="cora(3)" id="heart3"></span>
+      <span class="fa-sharp fa-solid fa-heart" onclick="cora(4)" id="heart4"></span>
+      <span class="fa-sharp fa-solid fa-heart" onclick="cora(5)" id="heart5"></span>
       </div>
       <br>
       <button class="w-20 btn btn-lg btn-primary" id="botonsito" type="submit">Enviar</button>

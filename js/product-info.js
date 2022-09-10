@@ -70,7 +70,7 @@ function show_comentarios(comentarios){
         `
     }
     
-    document.getElementById('comentario').innerHTML = "<h3 class='titulo-comentario'>Comentarios</h3>" + comment;
+    document.getElementById('comentario').innerHTML =  comment;
 }
 document.addEventListener("DOMContentLoaded", ()=>{
     getJSONData(comentarios).then(function(resultObj){
@@ -84,7 +84,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
 //funcion para mostrar los corazones en los comentarios
 function corazon(score){
     let heart=``
-    for(let i=0; i<=5; i ++){
+    //recorre y pinta los corazones del score(numero) que le pasa.
+    for(let i=0; i<5; i ++){
         if(i<score){
             heart += `<i class="fa-sharp fa-solid fa-heart checked"></i>`//corazon relleno
         }else{
@@ -93,6 +94,66 @@ function corazon(score){
     }
     return heart;
 }
+
+//creamos variable para guardar corazones seleccionados
+let puntuacioncora = 0
+//pintar los corazones
+function cora(number){
+    //guardamos la cantidad de corazon clickeado
+    puntuacioncora = number
+//equivalente a documentbyelementbyid
+let cora = document.querySelectorAll('#heart-score .fa-heart')
+//recorremos toda la cantidad de corazones, 
+    for(let i=0; i<cora.length; i ++){
+        //con esta condicion pintamos los que checkearon y los anteriores.
+        if(i<number){
+        cora[i].classList.add('checked')
+    }else{
+        //remueve los otros checkeados anteriormente (ejemplo si pintas 5 y despues queres 4 los cambia.)
+        cora[i].classList.remove('checked')
+    }
+    }
+}
+//funcion para el año, mes, dia , hora.
+function formatodate(){
+let d = new Date();
+let datestring = d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate() + " " +
+d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+return datestring;
+}
+//funcion para mandar el formulario
+function enviarform(){
+//variables con la info que deseamos imprimir   
+let textarea = document.getElementById('caja-comments')
+let usuario = JSON.parse(localStorage.getItem('item'))
+let fecha = formatodate()
+//imprimimos lo que deseamos imprimir 
+const impresion =  ` <div class="row">
+<div class="col">
+    <div class="d-flex w-100 justify-content-between comments ">
+        <div class="mb-1">
+        <h4> ${usuario.mail} - <span class="Yap"> ${fecha} - ${corazon(puntuacioncora)}</span> </h4> 
+        <hr>
+        <p> ${textarea.value} </p> 
+        </div>
+    </div>
+</div>
+</div>
+`
+//formato de impresion para que lo impreso quede arriba.
+document.getElementById('comentario').innerHTML = impresion + document.getElementById('comentario').innerHTML;
+}
+
+ //un evento que se ejecuta cuando la pagina termina de cargar
+ document.addEventListener('DOMContentLoaded', ()=>{
+    //Es un evento el cual captura cuando el formulario se envia
+    document.getElementById('formulario-opinion').addEventListener('submit', (event)=>{
+        // event es un parametro que recibe submit, que tiene todos los eventos de ese submit, luego usamos el preventDefault que evita la propagacion del submit(es decir enviar el formulario por naturaleza de html)(previene el comportamiento por defecto)
+        event.preventDefault() //evita que se refresque la pagina
+        enviarform();
+    })
+})
+
 
 
 
