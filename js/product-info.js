@@ -9,10 +9,10 @@ const comentarios =  `https://japceibal.github.io/emercado-api/products_comments
 function show_infoproducts(product){
     //generamos un string vacio donde iremos concatenando las fotos
     let imagenesproduct =  ""
-    //recorre el array de las fotos
-    for (let img of product.images){
-    imagenesproduct += `
-    <img src="${img}"/>
+    for (let i=0; i < product.images.length; i++){ //condicion para que se active si esta en la primera foto.(? if)(: else)
+    imagenesproduct += `<div class="carousel-item ${i==0?"active":""}">
+    <img src="${product.images[i]}" class="d-block w-100" />
+    </div>
     `
     }
     // creamos una variable donde imprimiremos las propiedades del json
@@ -32,12 +32,10 @@ function show_infoproducts(product){
     <p> ${product.soldCount} </p> 
     <br>
     <h4> <strong> Imagenes ilustrativas </strong> </h4> 
-    <div class="contenedor-fotos">
-    ${imagenesproduct}
-    </div>
     <br>
     `
     document.getElementById('info').innerHTML = producthtml;
+    document.querySelector('#carouselExampleControls .carousel-inner').innerHTML = imagenesproduct;
 }
 
 document.addEventListener("DOMContentLoaded", ()=>{
@@ -159,7 +157,37 @@ textarea.classList.add('error')
         enviarform();
     })
 })
+//(funcion tomada de categories.js) pa que guarde el producto en el local storage
+function setproduct(id) {
+    localStorage.setItem("productID", id);
+    //te redirecciona a products info
+    window.location = "product-info.html"
+}
+//productos relacionados 
+ function show_related(product){
+    let related = "";
+    for (let productito of product.relatedProducts){
+        related +=                                
+        `  <div onclick="setproduct('${productito.id}')"  class="list-group-item list-group-item-action contenedor-imagenes"> 
+        <img src=" ${productito.image} ">
+        <p><strong> ${productito.name}</strong> </p> 
+            </div>
+            `
+        }
+        //el div que tiene el id listadeautos 
+        document.getElementById('productosrelaciondos').innerHTML = related;
+    }
 
+    document.addEventListener("DOMContentLoaded", ()=>{
+        //pide una url y devuelve un jeison, .then es una funcion del fetch que se ejecuta despues de realizar una promise
+        getJSONData(infoproducts).then(function(resultObj){
+            if (resultObj.status === "ok")
+            {
+                // ejecuta la funcion con esa data del json
+                show_related(resultObj.data);
+            }
+        });
+    });
 
 
 

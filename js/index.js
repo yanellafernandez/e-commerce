@@ -25,4 +25,10 @@ document.addEventListener("DOMContentLoaded",()=>{
         document.getElementById('identificador').innerHTML=usuario.mail
     }
     });
+ //cerrar sesión
+    cerrao.addEventListener("click", () => {
+        localStorage.clear();
+        location.reload();
+      });
+
 

@@ -257,5 +257,21 @@ text-align: center;
 .checked{
   color: rgb(207, 87, 107);
 }
+.contenedor-imagenes{
+  display: flex;
+    width: 500px;
+    flex-direction: column;
+}
+#productosrelaciondos{
+  display: flex;
+  justify-content: center;
+}
 
-
+#carouselExampleControls {
+    width: 500px;
+    margin-right: 50px ;
+    margin-left: 50px;
+}
+#identificador{
+  background-color: rgba(255, 192, 203, 0.253);
+}
