@@ -36,9 +36,51 @@
     </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+    <!--Carrito -->
+    <div id="div_carrito" class="container">
+      <h1 style="text-align: center ;"> Carrito de compras</h1>
+      <h4>Articulos a comprar</h4>
+      <table id="tablita">
+        <thead>
+            <tr style="border-bottom: 1px solid black;">
+                <th></th>
+                <th>Nombre</th>
+                <th>Costo</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="foto"> </td>
+                <td id="name"></td>
+                <td id="costo"></td>
+                <td><input type="number" id="cantidad" style="width: 50px;" value="1" min="0"></td>
+                <td id="subtotal"></td>
+            </tr>
+        </tbody>
+       </table>
+       <hr>
+       <hr>
+       <!--Tipos de envio-->
+       <h3>Tipo de envío</h3>
+       <form>
+        <input type="radio" name="envio" value="p" required> Premium 2 a 5 días (15%)
+        <br>
+        <input type="radio" name="envio" value="e" required> Express 5 a 6 días (7%)
+        <br>
+        <input type="radio" name="envio" value="s" required> Standard 12 a 15 días (5%)
+        <br>
+        <br> 
+        <h3>Dirección de envío</h3>
+        <div>Calle</div>
+        <input type="text" name="calle">
+        <div>Numero</div>
+        <input type="text" name="numero">
+        <div>Esquina</div>
+        <input type="text" name="esquina">
+       </form>
+       <hr>
       </div>
     </div>
   </main>
