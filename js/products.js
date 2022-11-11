@@ -11,27 +11,27 @@ function filtrar() {
     let articulosF = lista.filter(listita => listita.cost >= min && listita.cost <= max );//sera el nuevo array con los articulos filtrados 
     //para cada articulo de la lista le diremos que el costo del articulo sea (las condiciones de ahi)
     articulosF.sort((ant,sig)=>ant.cost-sig.cost);// aca los ordena 
-    show_listAutos(articulosF);
+    show_products(articulosF);
 }
 // toma dos valores y los ordena de mayor a menor(descendente)
 function descendente() {
     let list = lista
     list.sort((a, b)=>b.cost-a.cost);
-    show_listAutos(list);
+    show_products(list);
 
 }
 // toma dos valores y los ordena por relevancia (ascendente)
 function descendenteRel() {
     let list = lista
     list.sort((a, b)=>b.soldCount-a.soldCount);
-    show_listAutos(list);
+    show_products(list);
 
 }
 // toma dos valores y los ordena de menor a mayor(ascendente)
 function ascendente() {
     let list = lista
     list.sort((a, b)=>a.cost-b.cost);
-    show_listAutos(list);
+    show_products(list);
 
 }
 
@@ -81,25 +81,25 @@ function setproduct(id) {
     window.location = "product-info.html"
 }
 
-function show_listAutos(autos){
+function show_products(products){
     let listaAutos = "";//genera un string vacio para despues concatenar el resto de los productos :D
     //recorre los productos del jeison
-    for (let auto of autos){
+    for (let product of products){
         //imprimo las variables del jeison en un html
         listaAutos +=                                
         //agregamos "onclick" para que tome el producto cuando clickeas en el
-        ` <div onclick="setproduct('${auto.id}')"  class="list-group-item list-group-item-action">
+        ` <div onclick="setproduct('${product.id}')"  class="list-group-item list-group-item-action">
         <div class="row">
             <div class="col-3">
-                <img src=" ${auto.image} " alt="product image" class="img-thumbnail">
+                <img src=" ${product.image} " alt="product image" class="img-thumbnail">
             </div>
             <div class="col">
                 <div class="d-flex w-100 justify-content-between">
                     <div class="mb-1">
-                    <h4> ${auto.name}  ${auto.currency}  ${auto.cost}  </h4> 
-                    <p>   ${auto.description} </p> 
+                    <h4> ${product.name}  ${product.currency}  ${product.cost}  </h4> 
+                    <p>   ${product.description} </p> 
                     </div>
-                    <small class="text-muted"> ${auto.soldCount} artículos vendidos</small> 
+                    <small class="text-muted"> ${product.soldCount} artículos vendidos</small> 
                 </div>
 
             </div>
@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         {
             lista = resultObj.data.products;
             // ejecuta la funcion con esa data del json
-            show_listAutos(lista);
+            show_products(lista);
         }
     });
     
@@ -141,7 +141,7 @@ document.getElementById("filtro").addEventListener("click", ()=>{
 });
 
 document.getElementById("clearRangeFilter").addEventListener("click", ()=>{
-    show_listAutos(lista);
+    show_products(lista);
 });
 
 buscar.addEventListener("keyup", filtrarBarra);

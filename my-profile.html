@@ -44,18 +44,77 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item">
-          </li>
+          <!-- Menú despegable  --> 
+          <div class="dropdown" >
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"  id="identificador">
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+              <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+              <li><a class="dropdown-item" href="" id="cerrao">Cerrar sesión</a></li>
+            </ul>
+          </div>
         </ul>
       </div>
     </div>
   </nav>
   <main>
+    <!--entrega 7-->
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
+      <form action="#" method="get" class="row mt-4" novalidate>
+        <div class="col">
+          <h1 class="mb-3">Perfil</h1>
+          <hr class="my-4 ">
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="nombre" class="form-label">Primer Nombre*</label>
+              <input type="text" class="form-control" id="nombre" required>
+              <div class="invalid-feedback">
+                Debe ingresar un nombre.
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="segundoNombre" class="form-label">Segundo nombre</label>
+              <input type="text" class="form-control" id="segundoNombre" required>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="apellido" class="form-label">Primer Apellido*</label>
+              <input type="text" class="form-control" id="apellido" required>
+              <div class="invalid-feedback">
+                Debe ingresar un apellido.
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="segundoApellido" class="form-label">Segundo apellido</label>
+              <input type="text" class="form-control" id="segundoApellido" required>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="email" class="form-label">Email*</label>
+              <input type="email" class="form-control" id="emailPerfil" required>
+              <div class="invalid-feedback">
+                Debe ingresar un email.
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="telefono" class="form-label">Telefono de contacto</label>
+              <input type="text" class="form-control" id="telefono" required>
+            </div>
+
+            <hr class="my-4 ">
+            
+            <button class="btn btn-primary col-sm-2" id="guardar" type="submit">Guardar cambios</button>
+            
+          </div>
+        </div>
+      </form>
+
     </div>
+    <!--entrega 7-->
   </main>
   <footer class="text-muted">
     <div class="container">

@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function(){
 document.addEventListener("DOMContentLoaded",()=>{
     //getitem obtiene el valor del item
     //json.parse convierte strings a un jeison
-    let usuario =JSON.parse(localStorage.getItem('item'));
+    let usuario =JSON.parse(localStorage.getItem('user'));
     if (usuario==null){
         location.href="login.html";
     //si existe un usuario, se tomara el elemnto con el id *** y se reemplazara su texto por el mail del usuario

@@ -6,7 +6,7 @@ function login (){
     if (usuario.mail != "" && usuario.contraseña != ""){
         // setItem guarda el valor de un item
         //json.stringify convierte el jeison a un string
-        localStorage.setItem('item', JSON.stringify(usuario));
+        localStorage.setItem('user', JSON.stringify(usuario));
         location.href = "index.html";
     } 
 }

@@ -123,7 +123,7 @@ return datestring;
 function enviarform(){
 //variables con la info que deseamos imprimir   
 let textarea = document.getElementById('caja-comments')
-let usuario = JSON.parse(localStorage.getItem('item'))
+let usuario = JSON.parse(localStorage.getItem('user'))
 let fecha = formatodate()
 //condicion de que el textarea no puede estar vacio
 if(textarea.value !== "" ){
