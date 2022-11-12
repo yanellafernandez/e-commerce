@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let nombre = document.getElementById('nombre').value;
         let apellido = document.getElementById('apellido').value;
         let telefono = document.getElementById('telefono').value;
-        if (nombre != "" && apellido != "" && telefono != "") {
+        if (nombre != "" && apellido != "" ) {
             let infoUsuario = {};
             infoUsuario.nombre = document.getElementById('nombre').value;
             infoUsuario.segundoNombre = document.getElementById('segundoNombre').value;
